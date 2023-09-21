@@ -23,6 +23,63 @@
      "type": "function"
     },
     {
+     "inputs": [],
+     "name": "getAllNumbersAndTimestamps",
+     "outputs": [
+      {
+       "components": [
+        {
+         "internalType": "string",
+         "name": "number",
+         "type": "string"
+        },
+        {
+         "internalType": "uint256",
+         "name": "timestamp",
+         "type": "uint256"
+        }
+       ],
+       "internalType": "struct Solana.User[]",
+       "name": "",
+       "type": "tuple[]"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
+     "inputs": [],
+     "name": "getTotalUser",
+     "outputs": [
+      {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
+     "inputs": [
+      {
+       "internalType": "string",
+       "name": "",
+       "type": "string"
+      }
+     ],
+     "name": "numberStamp",
+     "outputs": [
+      {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
      "inputs": [
       {
        "internalType": "string",
@@ -61,6 +118,19 @@
      "type": "function"
     },
     {
+     "inputs": [],
+     "name": "totalUser",
+     "outputs": [
+      {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
      "inputs": [
       {
        "internalType": "bytes32",
@@ -74,6 +144,30 @@
        "internalType": "bool",
        "name": "",
        "type": "bool"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
+     "inputs": [
+      {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+      }
+     ],
+     "name": "users",
+     "outputs": [
+      {
+       "internalType": "string",
+       "name": "number",
+       "type": "string"
+      },
+      {
+       "internalType": "uint256",
+       "name": "timestamp",
+       "type": "uint256"
       }
      ],
      "stateMutability": "view",

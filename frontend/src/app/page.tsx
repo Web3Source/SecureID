@@ -12,7 +12,7 @@ export default function Home() {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNumber(e.target.value);
   };
-  const contractaddress = "0x6Ae0da8a11F91FeBC52447e7c51c73cE32984ce5";
+  const contractaddress = "0x3Cc0848e43e6944f536F45e41f8B1418d5CF4919";
   useEffect(() => {
     async function initialize() {
       if (typeof window.ethereum !== "undefined") {
