@@ -1,16 +1,44 @@
-import React from "react";
+"use client";
+import "@rainbow-me/rainbowkit/styles.css";
+import {
+  ConnectButton,
+  getDefaultWallets,
+  RainbowKitProvider,
+} from "@rainbow-me/rainbowkit";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { polygonMumbai } from "wagmi/chains";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 
-function Header() {
+export default function Header() {
+  const { chains, publicClient } = configureChains(
+    [polygonMumbai],
+    [
+      // alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
+      publicProvider(),
+    ]
+  );
+
+  const { connectors } = getDefaultWallets({
+    appName: "My RainbowKit App",
+    projectId: "YOUR_PROJECT_ID",
+    chains,
+  });
+
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors,
+    publicClient,
+  });
+
   return (
-    <>
-      <div className="flex justify-between px-5 lg:px-20 py-5 bg-black text-gray-300 lg:text-lg font-semibold">
-        <div>
-          <p>Secure ID</p>
+    <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}>
+        <div className="flex justify-between bg-black text-white px-5  lg:px-20 text-md lg:text-2xl py-5">
+          <p className="pt-3">SecureID</p>
+          <ConnectButton label="Sign in" />
         </div>
-        <div>Connect Wallet</div>
-      </div>
-    </>
+      </RainbowKitProvider>
+    </WagmiConfig>
   );
 }
-
-export default Header;

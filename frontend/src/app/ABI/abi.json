@@ -1,0 +1,82 @@
+[
+    {
+     "inputs": [
+      {
+       "internalType": "string",
+       "name": "_number",
+       "type": "string"
+      },
+      {
+       "internalType": "bytes",
+       "name": "_sign",
+       "type": "bytes"
+      },
+      {
+       "internalType": "bytes32",
+       "name": "_hash",
+       "type": "bytes32"
+      }
+     ],
+     "name": "add",
+     "outputs": [],
+     "stateMutability": "nonpayable",
+     "type": "function"
+    },
+    {
+     "inputs": [
+      {
+       "internalType": "string",
+       "name": "",
+       "type": "string"
+      }
+     ],
+     "name": "registry",
+     "outputs": [
+      {
+       "internalType": "address",
+       "name": "",
+       "type": "address"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
+     "inputs": [
+      {
+       "internalType": "string",
+       "name": "_number",
+       "type": "string"
+      }
+     ],
+     "name": "resolver",
+     "outputs": [
+      {
+       "internalType": "address",
+       "name": "",
+       "type": "address"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    },
+    {
+     "inputs": [
+      {
+       "internalType": "bytes32",
+       "name": "",
+       "type": "bytes32"
+      }
+     ],
+     "name": "usedNumber",
+     "outputs": [
+      {
+       "internalType": "bool",
+       "name": "",
+       "type": "bool"
+      }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+    }
+   ]
