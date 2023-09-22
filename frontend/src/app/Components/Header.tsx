@@ -8,7 +8,7 @@ import {
   darkTheme,Theme,
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { polygonMumbai } from "wagmi/chains";
+import {sepolia } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import Link from "next/link";
@@ -32,7 +32,7 @@ export default function Header() {
     },
   } as Theme);
   const { chains, publicClient } = configureChains(
-    [polygonMumbai],
+    [sepolia],
     [
       // alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
       publicProvider(),

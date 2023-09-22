@@ -1,176 +1,259 @@
 [
-    {
-     "inputs": [
-      {
-       "internalType": "string",
-       "name": "_number",
-       "type": "string"
-      },
-      {
-       "internalType": "bytes",
-       "name": "_sign",
-       "type": "bytes"
-      },
-      {
-       "internalType": "bytes32",
-       "name": "_hash",
-       "type": "bytes32"
-      }
-     ],
-     "name": "add",
-     "outputs": [],
-     "stateMutability": "nonpayable",
-     "type": "function"
-    },
-    {
-     "inputs": [],
-     "name": "getAllNumbersAndTimestamps",
-     "outputs": [
-      {
-       "components": [
-        {
-         "internalType": "string",
-         "name": "number",
-         "type": "string"
-        },
-        {
-         "internalType": "uint256",
-         "name": "timestamp",
-         "type": "uint256"
-        }
-       ],
-       "internalType": "struct Solana.User[]",
-       "name": "",
-       "type": "tuple[]"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [],
-     "name": "getTotalUser",
-     "outputs": [
-      {
-       "internalType": "uint256",
-       "name": "",
-       "type": "uint256"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [
-      {
-       "internalType": "string",
-       "name": "",
-       "type": "string"
-      }
-     ],
-     "name": "numberStamp",
-     "outputs": [
-      {
-       "internalType": "uint256",
-       "name": "",
-       "type": "uint256"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [
-      {
-       "internalType": "string",
-       "name": "",
-       "type": "string"
-      }
-     ],
-     "name": "registry",
-     "outputs": [
-      {
-       "internalType": "address",
-       "name": "",
-       "type": "address"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [
-      {
-       "internalType": "string",
-       "name": "_number",
-       "type": "string"
-      }
-     ],
-     "name": "resolver",
-     "outputs": [
-      {
-       "internalType": "address",
-       "name": "",
-       "type": "address"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [],
-     "name": "totalUser",
-     "outputs": [
-      {
-       "internalType": "uint256",
-       "name": "",
-       "type": "uint256"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [
-      {
-       "internalType": "bytes32",
-       "name": "",
-       "type": "bytes32"
-      }
-     ],
-     "name": "usedNumber",
-     "outputs": [
-      {
-       "internalType": "bool",
-       "name": "",
-       "type": "bool"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    },
-    {
-     "inputs": [
-      {
-       "internalType": "uint256",
-       "name": "",
-       "type": "uint256"
-      }
-     ],
-     "name": "users",
-     "outputs": [
-      {
-       "internalType": "string",
-       "name": "number",
-       "type": "string"
-      },
-      {
-       "internalType": "uint256",
-       "name": "timestamp",
-       "type": "uint256"
-      }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-    }
-   ]
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_number",
+				"type": "string"
+			},
+			{
+				"internalType": "bytes",
+				"name": "_sign",
+				"type": "bytes"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "_hash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "otpHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint16",
+				"name": "otp",
+				"type": "uint16"
+			}
+		],
+		"name": "add",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_phone",
+				"type": "string"
+			}
+		],
+		"name": "createHash",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_key",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "phone",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint16",
+				"name": "otp",
+				"type": "uint16"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "hash",
+				"type": "bytes32"
+			}
+		],
+		"name": "GenerateOtp",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "getAllNumbersAndTimestamps",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "number",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Solana.User[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTotalUser",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "key",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "numberStamp",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "registry",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_number",
+				"type": "string"
+			}
+		],
+		"name": "resolver",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalUser",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "usedNumber",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "users",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "number",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
