@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SecureID",
+  title: "Secure ID",
   description: "Developed by Web3Source",
 };
 

@@ -1,11 +1,10 @@
 "use client";
 import React, { useState, ChangeEvent, useEffect } from "react";
-import contractabi from "./ABI/abi.json";
-import Header from "./Components/Header";
+import contractabi from "../ABI/abi.json";
+import Header from "../Components/Header";
 import { ethers } from "ethers";
-import Link from "next/link";
 
-export default function Home() {
+export default function page() {
   const [contract, setContract] = useState<ethers.Contract | undefined>();
   const [number, setNumber] = useState<string>("");
   const [Signer, setSigner] = useState<ethers.Signer | null>(null);
@@ -53,31 +52,49 @@ export default function Home() {
       const wallet = new ethers.Wallet(privatekey);
       const signature = await wallet.signMessage(message);
       console.log("Signature:", signature);
-      //const add = await contract.add(number, signature, messageHash);
-      //console.log(add);
+      const add = await contract.add(number, signature, messageHash);
+      console.log(add);
       const resolver = await contract.resolver(number);
       console.log("Address of that number", resolver);
     }
   }
+  const handleInputKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      document.getElementById('submitButton').click();
+    }
+  };
 
   return (
     <div className="bg-cover bg-no-repeat bg-[url('https://blogger.googleusercontent.com/img/a/AVvXsEhtEcBj_pGeOzjkPqy0jh6yzd_6mfDR92cFPkDry0P8j7YKPfHDLU7B5hxm6NQF0hZT9jYMudcoB44mH4Al0iZ0mA3_dErQyJiOxKJ39YNjQKK-9g9uaH-zr5FcjY2ptfg4s2tFUrnVYKwfGdRB3fJ6714oDoQv3w7gcBdybVzTOLhwjp0wxg2LSn0kLOI')]">
       <div className=" bg-[url('https://blogger.googleusercontent.com/img/a/AVvXsEhL3CqP8Ky4rtiyVk2oCFDarmY0BfwG3N_-S-HT_lDh7npzWQ7y6yz387R7P5-x2Vb_4MbSTnZSJkPFuspvZuuqDv3wUTMjRX2yEtoDc9eEsDGprY-tJ_NqhhgPMjcz98ZrKFtjy09BM9ZQjX2GLFFNhHXlEyCyziDJz7r7Brbali7004oLQU9U44L3cwU')]">
       <Header />
-      <div className="flex py-[23.5px] space-x-2 justify-center">
-      <div className=" w-[700px] space-y-10 flex-col justify-start">
-  <p className="text-5xl text-gray-200 font-serif pt-10 font-semibold">Seamlessly Send And Receive SOL with Just a Mobile Number!</p>
-  <p className="text-xl font-thin pb-7 text-gray-200 font-sans">Simplify Solana transactions with Secure ID. Use your mobile number for secure, hassle-free transfers. Enjoy peace of mind with biometric authentication. Join us for a modern Solana experience!</p>
- <Link href="/Register">
-  <button className="font-semibold hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200 ">Secure Now</button>
-  </Link>
+     <div className="py-[60px]">
+      <div className="flex justify-center items-center my-1 layout mx-80">
+  <div className="flex flex-col space-y-11">
+    <p className="text-3xl font-bold text-gray-300 font-serif text-center ">Enter your <br/> Mobile Number</p>
+    <input
+     className="border w-96 h-12  vg font-semibold outline-none hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200"
+     type="number"
+      placeholder="Enter your Number"
+      onChange={handleInputChange}
+      value={number}
+      onKeyPress={handleInputKeyPress}
+    />
+  </div>
 </div>
 
-        <div>
-          <img src="https://blogger.googleusercontent.com/img/a/AVvXsEj3gG9iqBUot9YycHB1lbVzfaozzFLGMpN2_MBu-XYiacRAZJRt7TgqAfFZt-y2qy-QVs3shy78mW4_uObnej4gd8VA2jrsnRVugCmA9QQvfQ5l0yH6k3PWTCmXhtWr6OczUkxffJWl1KKIccrHHsR5qhwy9ijVeiOoXKHyni740QiaqWXsqslYNkkdFeU" />
-        </div>
+      <div className="flex justify-center pt-4">
+        <button
+        id="submitButton"
+          onClick={init}
+          className="font-semibold hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200 "
+         >
+          Get Address
+        </button>
+      
       </div>
       </div>
+    </div>
     </div>
   );
 }
