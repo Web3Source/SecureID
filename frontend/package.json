@@ -14,9 +14,12 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.16",
+    "encoding": "^0.1.13",
     "ethers": "^5.7.2",
     "lodash.merge": "^4.6.2",
+    "lokijs": "^1.5.12",
     "next": "13.5.2",
+    "pino-pretty": "^10.2.0",
     "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,5 +28,8 @@
     "typescript": "5.2.2",
     "viem": "^1.11.1",
     "wagmi": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/lodash.merge": "^4.6.7"
   }
 }
