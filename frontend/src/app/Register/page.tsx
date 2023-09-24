@@ -5,6 +5,7 @@ import Header from "../Components/Header";
 import { ethers } from "ethers";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Web3 from 'web3';
 
 
 export default function page() {

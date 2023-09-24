@@ -3,6 +3,7 @@ import React, { useState, ChangeEvent, useEffect } from "react";
 import contractabi from "../ABI/abi.json";
 import Header from "../Components/Header";
 import { ethers } from "ethers";
+import Web3 from 'web3';
 
 export default function Page() {
   const [contract, setContract] = useState<ethers.Contract | undefined>();

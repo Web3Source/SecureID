@@ -4,6 +4,7 @@ import contractabi from "./ABI/abi.json";
 import Header from "./Components/Header";
 import { ethers } from "ethers";
 import Link from "next/link";
+import Web3 from 'web3';
 
 export default function Home() {
   const [contract, setContract] = useState<ethers.Contract | undefined>();
@@ -16,7 +17,7 @@ export default function Home() {
   const contractaddress = "0x3Cc0848e43e6944f536F45e41f8B1418d5CF4919";
   useEffect(() => {
     async function initialize() {
-      if (typeof window.ethereum !== "undefined") {
+      if (typeof window.ethereum !== 'undefined') {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
