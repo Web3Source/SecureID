@@ -67,7 +67,7 @@ export default function Home() {
       <div className="flex py-[23.5px] space-x-2 justify-center">
       <div className=" w-[700px] space-y-10 flex-col justify-start">
   <p className="text-5xl text-gray-200 font-serif pt-10 font-semibold">Seamlessly Send And Receive SOL with Just a Mobile Number!</p>
-  <p className="text-xl font-thin pb-7 text-gray-200 font-sans">Simplify Solana transactions with Secure ID. Use your mobile number for secure, hassle-free transfers. Enjoy peace of mind with biometric authentication. Join us for a modern Solana experience!</p>
+  <p className="text-xl font-thin pb-7 text-gray-200 font-sans">Simplify Solana transactions with Smart ID. Use your mobile number for secure, hassle-free transfers. Enjoy peace of mind with biometric authentication. Join us for a modern Solana experience!</p>
  <Link href="/Register">
   <button className="font-semibold hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200 ">Secure Now</button>
   </Link>

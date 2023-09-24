@@ -56,7 +56,7 @@ export default function Header() {
       <RainbowKitProvider  theme={myTheme}  chains={chains}>
         <div className="flex justify-between  px-5  lg:px-20 text-md lg:text-xl  font-light py-5">
         <Link href="/">
-          <img className="pt-3 h-20 w-auto" src="https://blogger.googleusercontent.com/img/a/AVvXsEhGZtG1gItAP2HDI_gBYyfMDrtTBZLGY9r7kVUGw9fW_HlbNaJ4x5nrDSv4ucUFPbRu4fqdi259UxiDZGXb-QalXpzk_JXbs_maAiY3Nm02a3TsPBKi3M5lGoYx7OeK98-RVo6a4q6sTmkebv_X-h0wcfgzZhw2MD59lyGhVyN-YjK8NLY4VFpjXjZVSOI" />
+          <img className="pt-3 h-20 w-auto" src="https://blogger.googleusercontent.com/img/a/AVvXsEjMjB2ctzxGJdcj8wiJh0P6gIXqSRttf__l0FQHNyrl27Sy88etgFi4HkTyxAYG5Hj-kNvcBXFD8_rNQfUwDi6iv_eLFVcy3zLKbhsVbLT5Iwik6BXK0JtzRZq24ZBz0Xe50mgHQq441tyf7TTVWiBXJFvId19lF8S7JbD1pGkTfk75qw6yc1M_1-nZ6OI" />
           </Link>
           <div className="flex">
             <Link href="/Directory">

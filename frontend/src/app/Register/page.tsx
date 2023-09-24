@@ -79,56 +79,55 @@ export default function page() {
   async function handleInputKey (event) {
     if (event.key === 'Enter') {
       setInitCalled(true)
-contract.on("GenerateOtp", (phone,otp,hash) => {
-  setOTPhash(hash)
-});
-
-    const createhash = await contract.createHash(number);    
+  contract.on("GenerateOtp", (phone,otp,hash) => {
+    setOTPhash(hash)
+  });
+    const createhash = contract.createHash(number);
+    console.log(createhash);
    }
   };
   return (
     <div className="bg-cover bg-no-repeat bg-[url('https://blogger.googleusercontent.com/img/a/AVvXsEhtEcBj_pGeOzjkPqy0jh6yzd_6mfDR92cFPkDry0P8j7YKPfHDLU7B5hxm6NQF0hZT9jYMudcoB44mH4Al0iZ0mA3_dErQyJiOxKJ39YNjQKK-9g9uaH-zr5FcjY2ptfg4s2tFUrnVYKwfGdRB3fJ6714oDoQv3w7gcBdybVzTOLhwjp0wxg2LSn0kLOI')]">
       <div className=" bg-[url('https://blogger.googleusercontent.com/img/a/AVvXsEhYK5CFO6my1-kN-nmMGhdpq72Oe82OTux36t-TNcBEQoUnUo8UZHd3VhHy5TJH28uewDFfAzkIM-1CLgNCzCgwjaE7IBNOdn5zQAWqMZRNfrFgjZdcunLLCiIHYG_V987jdiX__TbozSUA2XKD5QJOXK3MGBN1cLkgGV_yHjmDPKR6s6B59-TlPXrQVyk')]">
-      <Header />
-      
-     <div className="py-[60px]">
-      
-      <div className="flex justify-center items-center my-1 layout mx-80">
-  <div className="flex flex-col space-y-11">
-    
-    {!initCalled ?(
-      <>
-      <p className="text-3xl font-bold text-gray-300 font-serif text-center ">Enter your <br/> Mobile Number</p>
-       <input
-     className="border w-96 h-12  vg font-semibold outline-none hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200"
-     type="number"
-      placeholder="Enter your Number"
-      onChange={handleInputChange}
-      value={number}
-      onKeyPress={handleInputKey}
-    />
-      </>
+      <Header /> 
+     
+         
+              {!initCalled ?(
+                <>
+                   <div className="py-[91px]">
+                 <div className="flex justify-center items-center my-1 layout mx-80">
+            <div className="flex flex-col space-y-11">
+                <p className="text-3xl font-bold text-gray-300 font-serif text-center ">Enter your <br/> Mobile Number</p>
+                <input
+              className="border w-96 h-12  vg font-semibold outline-none hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200"
+              type="number"
+                placeholder="Enter your Number"
+                onChange={handleInputChange}
+                value={number}
+                onKeyPress={handleInputKey}
+              />
+                </div>
+        </div>
+        </div>
+                </>
 
-    ):(
-      <>
-      <p className="text-3xl font-bold text-gray-300 font-serif text-center ">Please verify your <br/> OTP</p>
-      <input
-      className="border w-96 h-12  vg font-semibold outline-none hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200"
-      type="number"
-       placeholder="Verify OTP"
-       onChange={handleOTPChange}
-       value={otp}
-       onKeyPress={handleInputKeyPress}
-     />
-     </>
-    ) }
-   
-   
-  </div>
-</div>
-
-
-  {initCalled? <div className="flex justify-center pt-4">
+              ):(
+                <>
+                   <div className="py-[60px]">
+                  <div className="flex justify-center items-center my-1 layout mx-80">
+            <div className="flex flex-col space-y-11">
+                <p className="text-3xl font-bold text-gray-300 font-serif text-center ">Please verify your <br/> OTP</p>
+                <input
+                className="border w-96 h-12  vg font-semibold outline-none hover:bg-[#3c3b4f] bg-[#635ffa] px-7 rounded-tl-3xl rounded-br-3xl border-white border-b border-t py-2 font-serif text-xl text-gray-200"
+                type="number"
+                placeholder="Verify OTP"
+                onChange={handleOTPChange}
+                value={otp}
+                onKeyPress={handleInputKeyPress}
+              />
+                </div>
+        </div>
+        <div className="flex justify-center pt-4">
         <button
         id="submitButton"
           onClick={init}
@@ -137,9 +136,11 @@ contract.on("GenerateOtp", (phone,otp,hash) => {
           Get Address
         </button>
         <ToastContainer />
-      </div>:<></> }
-      
       </div>
+      </div>
+              </>
+              ) }
+         
     </div>
     </div>
   );
